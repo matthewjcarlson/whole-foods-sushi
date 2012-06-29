@@ -9,7 +9,7 @@
         tools: 'all',
         appendTo: '',
         onSave: function(imageID, newURL) {
-            var img = document.getElementById(imageID);
+            var img = document.getElementById("image2");
             img.src = newURL;
         }
     });
@@ -26,6 +26,7 @@
 <div id="injection_site"></div>
 
 <img id="image1" src="http://images.aviary.com/imagesv5/feather_default.jpg"/>
+<img id="image2" src=""/>
 
 <!-- Add an edit button, passing the HTML id of the image and the public URL ot the image -->
 <p><input type="image" src="http://advanced.aviary.com/images/feather/edit-photo.png" value="Edit photo" onclick="return launchEditor('image1', 'http://images.aviary.com/imagesv5/feather_default.jpg');" /></p>
