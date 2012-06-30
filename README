@@ -3,3 +3,15 @@ http://freezing-lightning-2366.herokuapp.com/ | git@heroku.com:freezing-lightnin
 key: d3954246e
 secret: e8068162c
 
+<!-- Load Feather code -->
+
+
+
+<div id="injection_site"></div>
+
+<img id="image1" src="http://freezing-lightning-2366.herokuapp.com/IMG_0049.JPG"/>
+<br />
+<img id="image2" src=""/>
+
+<!-- Add an edit button, passing the HTML id of the image and the public URL ot the image -->
+<p><input type="image" src="http://advanced.aviary.com/images/feather/edit-photo.png" value="Edit photo" onclick="return launchEditor('image1', 'http://freezing-lightning-2366.herokuapp.com/IMG_0049.JPG');" /></p>
