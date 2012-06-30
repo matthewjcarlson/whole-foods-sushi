@@ -8,8 +8,7 @@ var express = require('express'),
 
 var app = express.createServer(express.logger());
 
-
-// Configuration
+var url = 'http://cartonapi.aviary.com/services/ostrich/render?';
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -32,7 +31,6 @@ app.get('/', function (req, res) {
   res.sendfile(__dirname + '/public/index.html');
 });
 
-var url = 'http://cartonapi.aviary.com/services/ostrich/render?';
 app.get('/aviary', function (req, res) {
    var ts = Math.round((new Date()).getTime() / 1000);
    var BLAH = "{'metadata':{'imageorigsize':[213,320]},'actionlist':[{'action':'setfeathereditsize','width':213,'height':320},{'action':'singe','params':[],'flatten':true}]}";
@@ -90,8 +88,6 @@ app.get('/aviary', function (req, res) {
    var sec = "&api_sig=" + sig;
     
    url += p + sec;
-   console.log(url);
-	
 	
   var urlObj = {
 	protocol: 'http:',
