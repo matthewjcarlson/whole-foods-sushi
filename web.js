@@ -1,4 +1,10 @@
-var express = require('express');
+var express = require('express'),
+    request = require('request'),
+    qs = require('querystring'),
+    cluster = require('cluster'),
+    md5 = require("blueimp-md5").md5,
+    os = require('os'),
+	URL = require('url');
 
 var app = express.createServer(express.logger());
 
@@ -24,6 +30,93 @@ app.configure('production', function(){
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/public/index.html');
+});
+
+var url = 'http://cartonapi.aviary.com/services/ostrich/render?';
+app.get('/aviary', function (req, res) {
+   var ts = Math.round((new Date()).getTime() / 1000);
+   var BLAH = "{'metadata':{'imageorigsize':[213,320]},'actionlist':[{'action':'setfeathereditsize','width':213,'height':320},{'action':'singe','params':[],'flatten':true}]}";
+
+   var params = 
+        { api_key: 'd3954246e',
+          app_version: '1.0',
+          backgroundcolor: '00000000',
+          calltype: 'renderActionList',
+          cellheight: -1,
+          cellwidth: -1,
+          cols: -1,
+          filepath: 'http://www.ci.walla-walla.wa.us/vertical/Sites/%7B5C31B82F-5E63-4200-9CF4-237E5245E279%7D/uploads/%7B06B3F966-0AB8-4824-B0D6-6EEBBD2FD824%7D.JPG',
+          filterid: -1,
+          format: 'jpg',
+          hardware_version: 1,
+          platform: 'web',
+          quality: 60,
+          renderparameters: BLAH,
+          response_format: 'json',
+          rows: -1,
+          scale: 1.0,
+          software_version: 1,
+          ts: ts,
+          version: 0.3  
+        };
+   var dd = encodeURIComponent(BLAH);
+   
+   var bigString = "e8068162c"+
+                   "api_keyd3954246e" + 
+                   "app_version1.0" + 
+                   "backgroundcolor00000000" +
+                   "calltyperenderActionList"+
+                   "cellheight-1"+
+                   "cellwidth-1"+
+                   "cols-1"+
+                   "filepath"+ encodeURIComponent("http://www.ci.walla-walla.wa.us/vertical/Sites/%7B5C31B82F-5E63-4200-9CF4-237E5245E279%7D/uploads/%7B06B3F966-0AB8-4824-B0D6-6EEBBD2FD824%7D.JPG")+
+                   "filterid-1"+
+                   "formatjpg"+
+                   "hardware_version1"+
+                   "platformweb"+
+                   "quality60"+
+                   "renderparameters"+ dd +
+                   "response_formatjson"+
+                   "rows-1"+
+                   "scale1"+
+                   "software_version1"+
+                   "ts" + ts +
+                   "version0.3";     
+   console.log(bigString);
+   
+   var p = qs.stringify(params);
+   var sig =  md5(bigString);
+      
+   var sec = "&api_sig=" + sig;
+    
+   url += p + sec;
+   console.log(url);
+	
+	
+  var urlObj = {
+	protocol: 'http:',
+	slashes: true,
+	host: 'cartonapi.aviary.com',
+	hostname: 'cartonapi.aviary.com',
+	href: url,
+	search: '?' + p + sec,
+	query: p + sec,
+	pathname: '/services/ostrich/render',
+	path: '/services/ostrich/render?' + p + sec
+  };
+
+  request({uri : urlObj}, function (error, response, body) {
+     if (!error && response.statusCode == 200) {
+          // console.log(response);
+           console.log(body);
+     }
+     else{
+      console.log("***** Error *****");
+      console.log(error);
+      console.log(response);
+      
+     }
+   });
 });
 
 var port = process.env.PORT || 5000;
