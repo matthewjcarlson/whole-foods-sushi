@@ -25,7 +25,7 @@
         cropPresets: ['Original'],
         maxSize: 1000,
         onSave: function(imageID, newURL) {
-            var img = document.getElementById("image2");
+            var img = document.getElementById("image27");
             img.src = newURL;
         }
     });
@@ -46,8 +46,8 @@
         <div id="example">
             <div id="slides">
                 <div class="slides_container">
-                    <a href="http://www.flickr.com/photos/jliba/4665625073/" title="145.365 - Happy Bokeh Thursday! | Flickr - Photo Sharing!" target="_blank"><img src="IMG_0049.JPG"></a>
-                    <a href="http://www.flickr.com/photos/stephangeyer/3020487807/" title="Taxi | Flickr - Photo Sharing!" target="_blank"><img src="011-395986578207.jpg"></a>
+                    <a href="" onclick="return launchEditor('image1', 'http://freezing-lightning-2366.herokuapp.com/IMG_0049.JPG');"><img id="image1" src="IMG_0049.JPG"></a>
+                    <a href="" onclick="return launchEditor('image1', 'http://freezing-lightning-2366.herokuapp.com/011-395986578207.jpg');"><img src="011-395986578207.jpg"></a>
                     <a href="http://www.flickr.com/photos/childofwar/2984345060/" title="Happy Bokeh raining Day | Flickr - Photo Sharing!" target="_blank"><img src="047-996327278207.jpg"></a>
                     <a href="http://www.flickr.com/photos/b-tal/117037943/" title="We Eat Light | Flickr - Photo Sharing!" target="_blank"><img src="100802368.jpg"></a>
                     <a href="http://www.flickr.com/photos/bu7amd/3447416780/" title="“I must go down to the sea again, to the lonely sea and the sky; and all I ask is a tall ship and a star to steer her by.” | Flickr - Photo Sharing!" target="_blank"><img src="56350295.jpg" width="570" height="270" alt="Slide 5"></a>
@@ -83,7 +83,7 @@
             <img src="img/example-frame.png" width="800" height="400" alt="Example Frame" id="frame">
         </div>
         <div id="footer">
-            
+            <img id="image27" src=""/>
         </div>
     
     </body>
