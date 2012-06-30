@@ -109,11 +109,13 @@ app.get('/aviary', function (req, res) {
      if (!error && response.statusCode == 200) {
           // console.log(response);
            console.log(body);
+           res.send('Hello Aviary!');
      }
      else{
       console.log("***** Error *****");
       console.log(error);
       console.log(response);
+      res.send('Hello Aviary Error!');
       
      }
    });
