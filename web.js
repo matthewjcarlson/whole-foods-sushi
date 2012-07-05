@@ -31,6 +31,10 @@ app.get('/', function (req, res) {
   res.sendfile(__dirname + '/public/index.html');
 });
 
+app.post('/save', function (req, res) {
+    console.log(request.body);
+});
+
 app.get('/aviary', function (req, res) {
    var ts = Math.round((new Date()).getTime() / 1000);
    var BLAH = "{'metadata':{'imageorigsize':[213,320]},'actionlist':[{'action':'setfeathereditsize','width':213,'height':320},{'action':'singe','params':[],'flatten':true}]}";
