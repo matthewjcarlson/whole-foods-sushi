@@ -32,7 +32,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/save', function (req, res) {
-    console.log(request.body);
+    console.log(req.body);
 });
 
 app.get('/aviary', function (req, res) {
