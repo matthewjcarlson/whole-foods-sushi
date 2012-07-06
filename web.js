@@ -37,7 +37,7 @@ app.post('/save', function (req, res) {
 
 app.get('/aviary', function (req, res) {
    var ts = Math.round((new Date()).getTime() / 1000);
-   var BLAH = "{'metadata':{'imageorigsize':[213,320]},'actionlist':[{'action':'setfeathereditsize','width':213,'height':320},{'action':'singe','params':[],'flatten':true}]}";
+   var BLAH = "{'action':'setfeathereditsize','width':625,'height':1000},{'action':'singe','params':[],'flatten':true}]}";
 
    var params = 
         { api_key: 'd3954246e',
@@ -47,7 +47,7 @@ app.get('/aviary', function (req, res) {
           cellheight: -1,
           cellwidth: -1,
           cols: -1,
-          filepath: 'http://www.ci.walla-walla.wa.us/vertical/Sites/%7B5C31B82F-5E63-4200-9CF4-237E5245E279%7D/uploads/%7B06B3F966-0AB8-4824-B0D6-6EEBBD2FD824%7D.JPG',
+          filepath: 'http://freezing-lightning-2366.herokuapp.com/jessi_weithman_family_raiter_013.jpg',
           filterid: -1,
           format: 'jpg',
           hardware_version: 1,
@@ -71,7 +71,7 @@ app.get('/aviary', function (req, res) {
                    "cellheight-1"+
                    "cellwidth-1"+
                    "cols-1"+
-                   "filepath"+ encodeURIComponent("http://www.ci.walla-walla.wa.us/vertical/Sites/%7B5C31B82F-5E63-4200-9CF4-237E5245E279%7D/uploads/%7B06B3F966-0AB8-4824-B0D6-6EEBBD2FD824%7D.JPG")+
+                   "filepath"+ encodeURIComponent("http://freezing-lightning-2366.herokuapp.com/jessi_weithman_family_raiter_013.jpg")+
                    "filterid-1"+
                    "formatjpg"+
                    "hardware_version1"+

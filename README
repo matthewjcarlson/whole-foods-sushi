@@ -15,3 +15,42 @@ secret: e8068162c
 
 <!-- Add an edit button, passing the HTML id of the image and the public URL ot the image -->
 <p><input type="image" src="http://advanced.aviary.com/images/feather/edit-photo.png" value="Edit photo" onclick="return launchEditor('image1', 'http://freezing-lightning-2366.herokuapp.com/IMG_0049.JPG');" /></p>
+
+
+{"metadata":{"imageorigsize":[1000,667]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":667},{"action":"sancarmen","params":[],"flatten":true}]}
+
+{"metadata":{"imageorigsize":[1000,662]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":662},{"action":"thresh","params":[],"flatten":true}]}
+
+{"metadata":{"imageorigsize":[1000,667]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":667},{"action":"andy","params":[],"flatten":true}]}
+
+{"metadata":{"imageorigsize":[1000,747]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":747},{"action":"joecool","params":[],"flatten":true}]}
+
+{"metadata":{"imageorigsize":[1000,747]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":747},{"action":"effects","name":"bw","params":[],"flatten":true}]}
+
+{"metadata":{"imageorigsize":[1000,625]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":625}]}
+http://freezing-lightning-2366.herokuapp.com/jessi_weithman_family_raiter_013.jpg
+{"metadata":{"imageorigsize":[1000,667]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":667}]}
+http://freezing-lightning-2366.herokuapp.com/jessi_weithman_family_raiter_014.jpg
+{"metadata":{"imageorigsize":[654,1000]},"actionlist":[{"action":"setfeathereditsize","width":654,"height":1000},{"action":"singe","params":[],"flatten":true}]}  
+http://freezing-lightning-2366.herokuapp.com/jessi_weithman_family_raiter_018.jpg
+
+{"metadata":{"imageorigsize":[1000,667]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":667},{"action":"effects","name":"sepia","params":[],"flatten":true}]} 
+http://freezing-lightning-2366.herokuapp.com/jessie_stevens_family_01.jpg
+{"metadata":{"imageorigsize":[1000,667]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":667},{"action":"sancarmen","params":[],"flatten":true}]} 
+http://freezing-lightning-2366.herokuapp.com/jessie_stevens_family_05.jpg
+{"metadata":{"imageorigsize":[664,1000]},"actionlist":[{"action":"setfeathereditsize","width":664,"height":1000},{"action":"thresh","params":[],"flatten":true}]}
+http://freezing-lightning-2366.herokuapp.com/kiaisha_barber_disney_023.jpg
+{"metadata":{"imageorigsize":[1000,664]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":664},{"action":"andy","params":[],"flatten":true}]}
+http://freezing-lightning-2366.herokuapp.com/kiaisha_barber_disney_025.jpg 
+{"metadata":{"imageorigsize":[664,1000]},"actionlist":[{"action":"setfeathereditsize","width":664,"height":1000},{"action":"joecool","params":[],"flatten":true}]} 
+http://freezing-lightning-2366.herokuapp.com/kiaisha_barber_disney_027.jpg
+{"metadata":{"imageorigsize":[1000,750]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":750},{"action":"effects","name":"bw","params":[],"flatten":true}]}  
+http://freezing-lightning-2366.herokuapp.com/tricia_kleman_disney_florida_002.jpg
+{"metadata":{"imageorigsize":[1000,747]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":747},{"action":"vivid","params":[],"flatten":true}]} 
+http://freezing-lightning-2366.herokuapp.com/IMG_0099.JPG
+{"metadata":{"imageorigsize":[1000,750]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":750},{"action":"aqua","params":[],"flatten":true}]}  
+http://freezing-lightning-2366.herokuapp.com/011-395986578207.jpg
+{"metadata":{"imageorigsize":[1000,662]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":662},{"action":"edgewood","params":[],"flatten":true}]} 
+ http://freezing-lightning-2366.herokuapp.com/71085485.jpg
+ {"metadata":{"imageorigsize":[1000,667]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":667},{"action":"softfocus","params":[],"flatten":true},{"action":"softfocus","params":[],"flatten":true}]} 
+ http://freezing-lightning-2366.herokuapp.com/91648679.jpg
