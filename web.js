@@ -37,7 +37,7 @@ app.post('/save', function (req, res) {
 
 app.get('/aviary', function (req, res) {
    var ts = Math.round((new Date()).getTime() / 1000);
-   var BLAH = "{'metadata':{'imageorigsize':[1000,662]},'actionlist':[{'action':'setfeathereditsize','width':1000,'height':662},{'action':'edgewood','params':[],'flatten':true}]}";
+   var BLAH = "{'metadata':{'imageorigsize':[1000,662]},'actionlist':[{'action':'setfeathereditsize','width':1000,'height':662},{'action':'softfocus','params':[],'flatten':true}]}";
 
    var params = 
         { api_key: 'd3954246e',
