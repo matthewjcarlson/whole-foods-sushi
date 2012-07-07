@@ -47,7 +47,7 @@ app.get('/aviary', function (req, res) {
           cellheight: -1,
           cellwidth: -1,
           cols: -1,
-          filepath: 'http://freezing-lightning-2366.herokuapp.com/variation_3600x2400_skyNpeople_ep.jpg.jpg',
+          filepath: 'http://freezing-lightning-2366.herokuapp.com/variation_3600x2400_skyNpeople_ep.jpg',
           filterid: -1,
           format: 'jpg',
           hardware_version: 1,
@@ -71,7 +71,7 @@ app.get('/aviary', function (req, res) {
                    "cellheight-1"+
                    "cellwidth-1"+
                    "cols-1"+
-                   "filepath"+ encodeURIComponent("http://freezing-lightning-2366.herokuapp.com/variation_3600x2400_skyNpeople_ep.jpg.jpg")+
+                   "filepath"+ encodeURIComponent("http://freezing-lightning-2366.herokuapp.com/variation_3600x2400_skyNpeople_ep.jpg")+
                    "filterid-1"+
                    "formatjpg"+
                    "hardware_version1"+
