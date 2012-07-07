@@ -37,7 +37,7 @@ app.post('/save', function (req, res) {
 
 app.get('/aviary', function (req, res) {
    var ts = Math.round((new Date()).getTime() / 1000);
-   var BLAH = "{'metadata':{'imageorigsize':[1000,662]},'actionlist':[{'action':'setfeathereditsize','width':1000,'height':662},{'action':'effects','name':'bw','params':[],'flatten':true}]}";
+   var BLAH = "{'metadata':{'imageorigsize':[1000,675]},'actionlist':[{'action':'setfeathereditsize','width':1000,'height':675},{'action':'thresh','params':[],'flatten':true}]}";
 
    var params = 
         { api_key: 'd3954246e',
@@ -47,7 +47,7 @@ app.get('/aviary', function (req, res) {
           cellheight: -1,
           cellwidth: -1,
           cols: -1,
-          filepath: 'http://freezing-lightning-2366.herokuapp.com/frequencyhigh_dimlarge_3000x4500_grassNhair_ep.jpg',
+          filepath: 'http://freezing-lightning-2366.herokuapp.com/frequencyhigh_3872x2592_vegetation_ep.jpg',
           filterid: -1,
           format: 'jpg',
           hardware_version: 1,
@@ -71,7 +71,7 @@ app.get('/aviary', function (req, res) {
                    "cellheight-1"+
                    "cellwidth-1"+
                    "cols-1"+
-                   "filepath"+ encodeURIComponent("http://freezing-lightning-2366.herokuapp.com/frequencyhigh_dimlarge_3000x4500_grassNhair_ep.jpg")+
+                   "filepath"+ encodeURIComponent("http://freezing-lightning-2366.herokuapp.com/frequencyhigh_3872x2592_vegetation_ep.jpg")+
                    "filterid-1"+
                    "formatjpg"+
                    "hardware_version1"+
