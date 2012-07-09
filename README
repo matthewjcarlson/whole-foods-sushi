@@ -3,18 +3,7 @@ http://freezing-lightning-2366.herokuapp.com/ | git@heroku.com:freezing-lightnin
 key: d3954246e
 secret: e8068162c
 
-<!-- Load Feather code -->
-
-
-
-<div id="injection_site"></div>
-
-<img id="image1" src="http://freezing-lightning-2366.herokuapp.com/IMG_0049.JPG"/>
-<br />
-<img id="image2" src=""/>
-
-<!-- Add an edit button, passing the HTML id of the image and the public URL ot the image -->
-<p><input type="image" src="http://advanced.aviary.com/images/feather/edit-photo.png" value="Edit photo" onclick="return launchEditor('image1', 'http://freezing-lightning-2366.herokuapp.com/IMG_0049.JPG');" /></p>
+http://localhost:5000/aviary/http%3A%2F%2Ffreezing-lightning-2366.herokuapp.com%2Fvariation_3600x2400_skyNpeople_ep.jpg/%7B%27metadata%27%3A%7B%27imageorigsize%27%3A%5B3600%2C2400%5D%7D%2C%27actionlist%27%3A%5B%7B%27action%27%3A%27setfeathereditsize%27%2C%27width%27%3A3600%2C%27height%27%3A2400%7D%2C%7B%27action%27%3A%27indiglow%27%2C%27params%27%3A%5B%5D%2C%27flatten%27%3Atrue%7D%5D%7D
 
 
 {"metadata":{"imageorigsize":[1000,667]},"actionlist":[{"action":"setfeathereditsize","width":1000,"height":667},{"action":"sancarmen","params":[],"flatten":true}]}

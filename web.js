@@ -39,8 +39,12 @@ app.get('/aviary/:image/:actions', function (req, res) {
    var ts = Math.round((new Date()).getTime() / 1000);
    var actions = req.params.actions;
    var image = req.params.image;
+   //var BLAH = "{'metadata':{'imageorigsize':[3600,2400]},'actionlist':[{'action':'setfeathereditsize','width':3600,'height':2400},{'action':'indiglow','params':[],'flatten':true}]}";
+
    console.log(actions);
    console.log(image);
+   
+   
    var params = 
         { api_key: 'd3954246e',
           app_version: '1.0',
@@ -54,7 +58,7 @@ app.get('/aviary/:image/:actions', function (req, res) {
           format: 'jpg',
           hardware_version: 1,
           platform: 'web',
-          quality: 60,
+          quality: 100,
           renderparameters: actions,
           response_format: 'json',
           rows: -1,
@@ -67,13 +71,14 @@ app.get('/aviary/:image/:actions', function (req, res) {
 
   var p = qs.stringify(params); 
   var signature = createSignature(image, actions,ts);
-  
+  console.log(signature);
+  url += p + signature;
   var urlObj = {
 	protocol: 'http:',
 	slashes: true,
 	host: 'cartonapi.aviary.com',
 	hostname: 'cartonapi.aviary.com',
-	href: url += p + signature,
+	href: url,
 	search: '?' + p + signature,
 	query: p + signature,
 	pathname: '/services/ostrich/render',
@@ -117,6 +122,7 @@ function createSignature(image, renderScript, timeStamp){
                    "software_version1"+
                    "ts" + timeStamp +
                    "version0.3";
+  console.log(bigString);
   var sig =  md5(bigString);
   return "&api_sig=" + sig;
 };
