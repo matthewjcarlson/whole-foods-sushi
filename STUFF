@@ -1,0 +1,67 @@
+var BLAH = "{'metadata':{'imageorigsize':[3600,2400]},'actionlist':[{'action':'setfeathereditsize','width':3600,'height':2400},{'action':'indiglow','params':[],'flatten':true}]}";
+
+   var params = 
+        { api_key: 'd3954246e',
+          app_version: '1.0',
+          backgroundcolor: '00000000',
+          calltype: 'renderActionList',
+          cellheight: -1,
+          cellwidth: -1,
+          cols: -1,
+          filepath: 'http://freezing-lightning-2366.herokuapp.com/variation_3600x2400_skyNpeople_ep.jpg',
+          filterid: -1,
+          format: 'jpg',
+          hardware_version: 1,
+          platform: 'web',
+          quality: 60,
+          renderparameters: BLAH,
+          response_format: 'json',
+          rows: -1,
+          scale: 1.0,
+          software_version: 1,
+          ts: ts,
+          version: 0.3  
+        };
+   var dd = encodeURIComponent(BLAH);
+   
+   var bigString = "e8068162c"+
+                   "api_keyd3954246e" + 
+                   "app_version1.0" + 
+                   "backgroundcolor00000000" +
+                   "calltyperenderActionList"+
+                   "cellheight-1"+
+                   "cellwidth-1"+
+                   "cols-1"+
+                   "filepath"+ encodeURIComponent("http://freezing-lightning-2366.herokuapp.com/variation_3600x2400_skyNpeople_ep.jpg")+
+                   "filterid-1"+
+                   "formatjpg"+
+                   "hardware_version1"+
+                   "platformweb"+
+                   "quality100"+
+                   "renderparameters"+ dd +
+                   "response_formatjson"+
+                   "rows-1"+
+                   "scale1"+
+                   "software_version1"+
+                   "ts" + ts +
+                   "version0.3";     
+   console.log(bigString);
+   
+   var p = qs.stringify(params);
+   var sig =  md5(bigString);
+      
+   var sec = "&api_sig=" + sig;
+    
+   url += p + sec;
+	
+  var urlObj = {
+	protocol: 'http:',
+	slashes: true,
+	host: 'cartonapi.aviary.com',
+	hostname: 'cartonapi.aviary.com',
+	href: url,
+	search: '?' + p + sec,
+	query: p + sec,
+	pathname: '/services/ostrich/render',
+	path: '/services/ostrich/render?' + p + sec
+  };

@@ -35,10 +35,10 @@ app.post('/save', function (req, res) {
     console.log(req.body);
 });
 
-app.get('/aviary', function (req, res) {
+app.get('/aviary/:image/:actions', function (req, res) {
    var ts = Math.round((new Date()).getTime() / 1000);
-   var BLAH = "{'metadata':{'imageorigsize':[3600,2400]},'actionlist':[{'action':'setfeathereditsize','width':3600,'height':2400},{'action':'indiglow','params':[],'flatten':true}]}";
-
+   var actions = req.params.id;
+   var image = req.params.image;
    var params = 
         { api_key: 'd3954246e',
           app_version: '1.0',
@@ -47,13 +47,13 @@ app.get('/aviary', function (req, res) {
           cellheight: -1,
           cellwidth: -1,
           cols: -1,
-          filepath: 'http://freezing-lightning-2366.herokuapp.com/variation_3600x2400_skyNpeople_ep.jpg',
+          filepath: image,
           filterid: -1,
           format: 'jpg',
           hardware_version: 1,
           platform: 'web',
           quality: 60,
-          renderparameters: BLAH,
+          renderparameters: actions,
           response_format: 'json',
           rows: -1,
           scale: 1.0,
@@ -61,9 +61,40 @@ app.get('/aviary', function (req, res) {
           ts: ts,
           version: 0.3  
         };
-   var dd = encodeURIComponent(BLAH);
-   
-   var bigString = "e8068162c"+
+  
+
+  var p = qs.stringify(params); 
+  var signature = createSignature(image, actions,ts);
+  
+  var urlObj = {
+	protocol: 'http:',
+	slashes: true,
+	host: 'cartonapi.aviary.com',
+	hostname: 'cartonapi.aviary.com',
+	href: url += p + signature,
+	search: '?' + p + signature,
+	query: p + signature,
+	pathname: '/services/ostrich/render',
+	path: '/services/ostrich/render?' + p + signature
+  };
+
+  request({uri : urlObj}, function (error, response, body) {
+     if (!error && response.statusCode == 200) {
+           console.log(body);
+           res.send(body);
+     }
+     else{
+      console.log("***** Error *****");
+      console.log(error);
+      console.log(response);
+      res.send('Hello Aviary Error!');
+     }
+   });
+});
+
+function createSignature(image, renderScript, timeStamp){
+  var renderParams = encodeURIComponent(renderScript);
+  var bigString = "e8068162c"+
                    "api_keyd3954246e" + 
                    "app_version1.0" + 
                    "backgroundcolor00000000" +
@@ -71,56 +102,24 @@ app.get('/aviary', function (req, res) {
                    "cellheight-1"+
                    "cellwidth-1"+
                    "cols-1"+
-                   "filepath"+ encodeURIComponent("http://freezing-lightning-2366.herokuapp.com/variation_3600x2400_skyNpeople_ep.jpg")+
+                   "filepath"+ encodeURIComponent(image)+
                    "filterid-1"+
                    "formatjpg"+
                    "hardware_version1"+
                    "platformweb"+
-                   "quality60"+
-                   "renderparameters"+ dd +
+                   "quality100"+
+                   "renderparameters"+ renderParams +
                    "response_formatjson"+
                    "rows-1"+
                    "scale1"+
                    "software_version1"+
-                   "ts" + ts +
-                   "version0.3";     
-   console.log(bigString);
-   
-   var p = qs.stringify(params);
-   var sig =  md5(bigString);
-      
-   var sec = "&api_sig=" + sig;
-    
-   url += p + sec;
-	
-  var urlObj = {
-	protocol: 'http:',
-	slashes: true,
-	host: 'cartonapi.aviary.com',
-	hostname: 'cartonapi.aviary.com',
-	href: url,
-	search: '?' + p + sec,
-	query: p + sec,
-	pathname: '/services/ostrich/render',
-	path: '/services/ostrich/render?' + p + sec
-  };
+                   "ts" + timeStamp +
+                   "version0.3";
+  var sig =  md5(bigString);
+  return "&api_sig=" + sig;
+};
 
-  request({uri : urlObj}, function (error, response, body) {
-     if (!error && response.statusCode == 200) {
-          // console.log(response);
-           console.log(body);
-           res.send('Hello Aviary!');
-     }
-     else{
-      console.log("***** Error *****");
-      console.log(error);
-      console.log(response);
-      res.send('Hello Aviary Error!');
-      
-     }
-   });
-});
-
+function createSignature()
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
     console.log("Listening on " + port);
