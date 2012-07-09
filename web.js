@@ -37,8 +37,10 @@ app.post('/save', function (req, res) {
 
 app.get('/aviary/:image/:actions', function (req, res) {
    var ts = Math.round((new Date()).getTime() / 1000);
-   var actions = req.params.id;
+   var actions = req.params.actions;
    var image = req.params.image;
+   console.log(actions);
+   console.log(image);
    var params = 
         { api_key: 'd3954246e',
           app_version: '1.0',
