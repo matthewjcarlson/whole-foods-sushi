@@ -119,7 +119,7 @@ function createSignature(image, renderScript, timeStamp){
   return "&api_sig=" + sig;
 };
 
-function createSignature()
+
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
     console.log("Listening on " + port);
